@@ -227,7 +227,7 @@ create_parquet_state(const char *filename,
              * XXX If we will ever want to support structs then this should be
              * changed.
              */
-            if (strcmp(NameStr(TupleDescAttr(tupleDesc, i)->attname),
+            if (strcasecmp(NameStr(TupleDescAttr(tupleDesc, i)->attname),
                        path[0].c_str()) == 0)
             {
                 /* Found mapping! */
